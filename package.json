@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "relink": "rm -rf node_modules package-lock.json && npm i --legacy-peer-deps && npm link @collie-lang/cli @collie-lang/react @collie-lang/collie-tests @collie-lang/compiler @collie-lang/config @collie-lang/expo @collie-lang/html-runtime @collie-lang/next @collie-lang/storybook @collie-lang/vite @collie-lang/webpack"
   },
   "dependencies": {
     "react": "^19.2.0",
