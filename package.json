@@ -8,13 +8,16 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "relink": "rm -rf node_modules package-lock.json && npm i --legacy-peer-deps && npm link @collie-lang/cli @collie-lang/react @collie-lang/collie-tests @collie-lang/compiler @collie-lang/config @collie-lang/expo @collie-lang/html-runtime @collie-lang/next @collie-lang/storybook @collie-lang/vite @collie-lang/webpack"
+    "local:collie:use": "node scripts/use-local-collie.mjs --manifest ../collie/.local-packs/manifest.json",
+    "local:collie:clean": "rm -rf node_modules package-lock.json"
   },
   "dependencies": {
+    "@collie-lang/react": "^1.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@collie-lang/vite": "^1.1.1",
     "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
