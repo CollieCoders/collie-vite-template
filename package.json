@@ -8,8 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "local:collie:use": "node scripts/use-local-collie.mjs --manifest ../collie/.local-packs/manifest.json",
-    "local:collie:clean": "rm -rf node_modules package-lock.json"
+    "clean": "rm -rf node_modules package-lock.json && npm i"
   },
   "dependencies": {
     "react": "^19.2.0",
