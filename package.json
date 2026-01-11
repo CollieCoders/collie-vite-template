@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "clean": "npm uninstall @collie-lang/react && npm uninstall -D @collie-lang/compiler @collie-lang/config @collie-lang/vite && rm -rf node_modules package-lock.json && npm i"
+    "clean": "npm uninstall @collie-lang/react && npm uninstall -D @collie-lang/compiler @collie-lang/config @collie-lang/vite && rm -rf node_modules package-lock.json && npm i",
+    "init": "npx @collie-lang/cli init"
   },
   "dependencies": {
     "@collie-lang/react": "^1.5.2",
