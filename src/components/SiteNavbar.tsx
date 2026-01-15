@@ -6,7 +6,7 @@ import { CrateModal } from "./CrateModal";
 export function SiteNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-800/80 bg-slate-950/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-90vw items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 rounded-lg px-2 py-1">
             <img

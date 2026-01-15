@@ -16,6 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.max-w-90vw {
+  max-width: 90vw !important;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

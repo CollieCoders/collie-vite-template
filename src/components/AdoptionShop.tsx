@@ -6,7 +6,7 @@ function AdoptionShopContent() {
   const { counts } = useAppContext();
   return (
     <section className="w-full">
-      <div className="mx-auto max-w-7xl px-4 py-6">
+      <div className="mx-auto max-w-90vw px-4 py-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-center">
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl font-semibold tracking-tight">
