@@ -69,3 +69,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.crate-button {
+  background-color: transparent !important;
+}
+
+.card-base-font {
+  color: #333333;
+}
+
+.github-button {
+  padding: 0 0 6px 0 !important;
+}

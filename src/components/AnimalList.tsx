@@ -23,7 +23,7 @@ export function AnimalList() {
     expandedBioIds,
     toggleCrate,
     toggleBio,
-    quickAdopt,
+    // quickAdopt,
   } = useAppContext();
 
   return (
@@ -35,7 +35,7 @@ export function AnimalList() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {filteredAnimals.map((a: Animal) => {
             const inCrate = crateIds.has(a.id);
             const isBioExpanded = expandedBioIds.has(a.id);
@@ -59,13 +59,13 @@ export function AnimalList() {
 
                   <div className="flex w-full items-start justify-between gap-3">
                     <div className="min-w-0">
-                      <h3 className="text-lg font-semibold leading-tight">
+                      <h3 className="card-base-font text-lg font-semibold leading-tight">
                         {a.name}{" "}
                         <span className="text-sm font-normal opacity-70">
                           • {a.ageLabel}
                         </span>
                       </h3>
-                      <p className="text-sm opacity-80">{a.tagline}</p>
+                      <p className="card-base-font text-sm opacity-80">{a.tagline}</p>
                     </div>
 
                     <Chip
@@ -102,7 +102,7 @@ export function AnimalList() {
                     })}
                   </div>
 
-                  <div className="text-sm leading-relaxed">
+                  <div className="card-base-font text-sm leading-relaxed">
                     <p className="opacity-90">{isBioExpanded ? a.bio : short}</p>
                     {(isClamped || isBioExpanded) && (
                       <Button
@@ -164,14 +164,14 @@ export function AnimalList() {
                     {inCrate ? "Remove from Crate" : "Add to Crate"}
                   </Button>
 
-                  <Button
+                  {/* <Button
                     variant="ghost"
                     onPress={() => {
                       quickAdopt(a.id);
                     }}
                   >
                     Quick adopt →
-                  </Button>
+                  </Button> */}
                 </CardFooter>
               </Card>
             );

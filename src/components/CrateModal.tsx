@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Chip, Modal } from "@heroui/react";
 import { useAppContext } from "../context/AppContextBase";
+import shoppingCartIcon from "../assets/shopping-cart-icon.png";
 
 export function CrateModal() {
   const { crateIds, crateItems, toggleCrate, clearCrate } = useAppContext();
@@ -7,8 +8,16 @@ export function CrateModal() {
   return (
     <Modal>
       <Modal.Trigger className="flex items-center gap-2">
-        <Button variant={crateIds.size ? "secondary" : "ghost"}>
-          Open Crate
+        <Button
+          variant={crateIds.size ? "secondary" : "primary"}
+          className="crate-button bg-transparent hover:bg-transparent active:bg-transparent"
+          aria-label="Open crate"
+        >
+          <img
+            src={shoppingCartIcon}
+            alt=""
+            className="h-6 w-6"
+          />
         </Button>
 
         {crateIds.size > 0 && (
