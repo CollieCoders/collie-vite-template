@@ -13,8 +13,10 @@ export type BreedGuess = {
   confidence: "primary" | "secondary" | "suspected" | "unknown";
 };
 
+export type Animals = Animal[];
+
 export type Animal = {
-  id: number;
+  id: string;
   species: Species;
 
   name: string;
@@ -48,7 +50,7 @@ export type Animal = {
 
 export const animals: Animal[] = [
   {
-    id: 1,
+    id: "dog-001",
     species: "dog",
     name: "Milo",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -65,7 +67,7 @@ export const animals: Animal[] = [
     considerations: ["Can get mouthy when excited (training helps)", "Needs daily exercise"],
   },
   {
-    id: 2,
+    id: "dog-002",
     species: "dog",
     name: "Juniper",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -82,7 +84,7 @@ export const animals: Animal[] = [
     considerations: ["High energy", "May herd small children (redirect + training)"],
   },
   {
-    id: 3,
+    id: "dog-003",
     species: "dog",
     name: "Rufus",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -99,7 +101,7 @@ export const animals: Animal[] = [
     considerations: ["Prefers slow introductions to new dogs", "Can be wary of strangers at first"],
   },
   {
-    id: 4,
+    id: "dog-004",
     species: "dog",
     name: "Waffles",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -116,7 +118,7 @@ export const animals: Animal[] = [
     considerations: ["Can be vocal", "Strong prey/scent drive (leash + secure doors)"],
   },
   {
-    id: 5,
+    id: "dog-005",
     species: "dog",
     name: "Nova",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -133,7 +135,7 @@ export const animals: Animal[] = [
     considerations: ["High energy", "Can be an escape artist (secure fencing)", "Seasonal shedding"],
   },
   {
-    id: 6,
+    id: "dog-006",
     species: "dog",
     name: "Otis",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -150,7 +152,7 @@ export const animals: Animal[] = [
     considerations: ["Still learning leash manners", "Jumps when excited"],
   },
   {
-    id: 7,
+    id: "dog-007",
     species: "dog",
     name: "Sage",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -167,7 +169,7 @@ export const animals: Animal[] = [
     considerations: ["Needs regular grooming", "Prefers calmer dog friends"],
   },
   {
-    id: 8,
+    id: "dog-008",
     species: "dog",
     name: "Biscuit",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -184,7 +186,7 @@ export const animals: Animal[] = [
     considerations: ["Shy with strangers at first", "Prefers older kids who respect boundaries"],
   },
   {
-    id: 9,
+    id: "dog-009",
     species: "dog",
     name: "Koda",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -202,7 +204,7 @@ export const animals: Animal[] = [
     considerations: ["Can be vocal when bored", "Needs structured play/exercise"],
   },
   {
-    id: 10,
+    id: "dog-010",
     species: "dog",
     name: "Luna",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -219,7 +221,7 @@ export const animals: Animal[] = [
     considerations: ["Prefers being the only dog", "Needs slow introductions to new environments"],
   },
   {
-    id: 11,
+    id: "dog-011",
     species: "dog",
     name: "Scout",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -236,7 +238,7 @@ export const animals: Animal[] = [
     considerations: ["High mental energy", "Can become restless without enrichment"],
   },
   {
-    id: 12,
+    id: "dog-012",
     species: "dog",
     name: "Hazel",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -253,7 +255,7 @@ export const animals: Animal[] = [
     considerations: ["Needs regular grooming", "Prefers a quiet home"],
   },
   {
-    id: 13,
+    id: "dog-013",
     species: "dog",
     name: "Diesel",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -270,7 +272,7 @@ export const animals: Animal[] = [
     considerations: ["Slow introductions to strangers", "Prefers calm dog friends"],
   },
   {
-    id: 14,
+    id: "dog-014",
     species: "dog",
     name: "Poppy",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -287,7 +289,7 @@ export const animals: Animal[] = [
     considerations: ["Needs regular grooming", "High energy in short bursts (young + excited)"],
   },
   {
-    id: 15,
+    id: "dog-015",
     species: "dog",
     name: "Atlas",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -304,7 +306,7 @@ export const animals: Animal[] = [
     considerations: ["Needs space to turn around (big body)", "Some leash practice for size/strength"],
   },
   {
-    id: 16,
+    id: "dog-016",
     species: "dog",
     name: "Pebble",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -321,7 +323,7 @@ export const animals: Animal[] = [
     considerations: ["Still learning house manners", "Can be distractible on walks"],
   },
   {
-    id: 17,
+    id: "dog-017",
     species: "dog",
     name: "Remy",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -338,7 +340,7 @@ export const animals: Animal[] = [
     considerations: ["Sensitive to loud/chaotic environments", "Prey drive (leash + awareness)"],
   },
   {
-    id: 18,
+    id: "dog-018",
     species: "dog",
     name: "Teddy",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -356,7 +358,7 @@ export const animals: Animal[] = [
     considerations: ["Can be timid with strangers", "Regular brushing needed"],
   },
   {
-    id: 19,
+    id: "dog-019",
     species: "dog",
     name: "Maple",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -374,7 +376,7 @@ export const animals: Animal[] = [
     considerations: ["Needs regular grooming", "Can be heat-sensitive (summer walks early/late)"],
   },
   {
-    id: 20,
+    id: "dog-020",
     species: "dog",
     name: "Ziggy",
     image: new URL("../../assets/animals/dog_placeholder.png", import.meta.url).href,
@@ -391,7 +393,7 @@ export const animals: Animal[] = [
     considerations: ["High energy", "Can get overstimulated (needs calm decompression time)"],
   },
   {
-    id: 21,
+    id: "cat-001",
     species: "cat",
     name: "Cleo",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -408,7 +410,7 @@ export const animals: Animal[] = [
     considerations: ["Prefers slow introductions to other pets", "Not a fan of being picked up too much"],
   },
   {
-    id: 22,
+    id: "cat-002",
     species: "cat",
     name: "Mochi",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -425,7 +427,7 @@ export const animals: Animal[] = [
     considerations: ["Needs regular grooming", "Can be shy in loud environments"],
   },
   {
-    id: 23,
+    id: "cat-003",
     species: "cat",
     name: "Gizmo",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -442,7 +444,7 @@ export const animals: Animal[] = [
     considerations: ["Needs lots of playtime", "Will investigate counters (cat-proofing helps)"],
   },
   {
-    id: 24,
+    id: "cat-004",
     species: "cat",
     name: "Saffron",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -459,7 +461,7 @@ export const animals: Animal[] = [
     considerations: ["Vocal (especially around meals)", "Prefers being the only cat"],
   },
   {
-    id: 25,
+    id: "cat-005",
     species: "cat",
     name: "Pippin",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -476,7 +478,7 @@ export const animals: Animal[] = [
     considerations: ["Shy at first", "Prefers a calm home"],
   },
   {
-    id: 26,
+    id: "cat-006",
     species: "cat",
     name: "Nyx",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -493,7 +495,7 @@ export const animals: Animal[] = [
     considerations: ["Needs slow introductions to new people", "Prefers predictable routines"],
   },
   {
-    id: 27,
+    id: "cat-007",
     species: "cat",
     name: "Basil",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -510,7 +512,7 @@ export const animals: Animal[] = [
     considerations: ["Can get underfoot (he wants to be included)", "Needs daily play"],
   },
   {
-    id: 28,
+    id: "cat-008",
     species: "cat",
     name: "Opal",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -527,7 +529,7 @@ export const animals: Animal[] = [
     considerations: ["Prefers a peaceful environment", "Needs regular grooming"],
   },
   {
-    id: 29,
+    id: "cat-009",
     species: "cat",
     name: "Tuna",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
@@ -544,7 +546,7 @@ export const animals: Animal[] = [
     considerations: ["Will try to steal food (secure storage helps)", "Needs enrichment to avoid boredom"],
   },
   {
-    id: 30,
+    id: "cat-010",
     species: "cat",
     name: "Marbles",
     image: new URL("../../assets/animals/cat_placeholder.png", import.meta.url).href,
