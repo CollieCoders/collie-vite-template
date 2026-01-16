@@ -28,45 +28,66 @@ export function AnimalFilters() {
   } = useAppContext();
 
   return (
-    <div className="flex flex-col gap-4">
-      <Tabs
-        className="w-full"
-        selectedKey={species}
-        onSelectionChange={(key) => setSpecies(key as SpeciesFilter)}
-      >
-        <Tabs.ListContainer>
-          <Tabs.List aria-label="Species filter">
-            <Tabs.Tab id="all">
-              All ({counts.total})
-              <Tabs.Indicator />
-            </Tabs.Tab>
-            <Tabs.Tab id="dog">
-              Dogs ({counts.dogs})
-              <Tabs.Indicator />
-            </Tabs.Tab>
-            <Tabs.Tab id="cat">
-              Cats ({counts.cats})
-              <Tabs.Indicator />
-            </Tabs.Tab>
-          </Tabs.List>
-        </Tabs.ListContainer>
+    <div className="flex flex-col gap-5 text-slate-900">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Filters
+          </p>
+          <h2 className="text-lg font-semibold">Find your match</h2>
+          <p className="text-xs text-slate-500">
+            Tune the vibe, then browse with intent.
+          </p>
+        </div>
 
-        <Tabs.Panel id="all" className="pt-0"><span /></Tabs.Panel>
-        <Tabs.Panel id="dog" className="pt-0"><span /></Tabs.Panel>
-        <Tabs.Panel id="cat" className="pt-0"><span /></Tabs.Panel>
-      </Tabs>
+        <Button size="sm" variant="secondary" onPress={clearFilters}>
+          Reset
+        </Button>
+      </div>
 
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
-        <div className="lg:col-span-4">
+      <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-sm">
+        <p className="text-xs font-medium text-slate-500">Species</p>
+        <Tabs
+          className="mt-2 w-full"
+          selectedKey={species}
+          onSelectionChange={(key) => setSpecies(key as SpeciesFilter)}
+        >
+          <Tabs.ListContainer>
+            <Tabs.List aria-label="Species filter">
+              <Tabs.Tab id="all">
+                All ({counts.total})
+                <Tabs.Indicator />
+              </Tabs.Tab>
+              <Tabs.Tab id="dog">
+                Dogs ({counts.dogs})
+                <Tabs.Indicator />
+              </Tabs.Tab>
+              <Tabs.Tab id="cat">
+                Cats ({counts.cats})
+                <Tabs.Indicator />
+              </Tabs.Tab>
+            </Tabs.List>
+          </Tabs.ListContainer>
+
+          <Tabs.Panel id="all" className="pt-0"><span /></Tabs.Panel>
+          <Tabs.Panel id="dog" className="pt-0"><span /></Tabs.Panel>
+          <Tabs.Panel id="cat" className="pt-0"><span /></Tabs.Panel>
+        </Tabs>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-sm">
+          <p className="text-xs font-medium text-slate-500">Search</p>
           <Input
             aria-label="Search"
+            className="mt-2"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder='Search name, bio, breeds, highlights, etc.'
+            placeholder="Search name, bio, breeds, highlights, etc."
           />
         </div>
 
-        <div className="lg:col-span-4">
+        <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-sm">
           <Slider
             minValue={0}
             maxValue={180}
@@ -90,13 +111,12 @@ export function AnimalFilters() {
             </Slider.Track>
           </Slider>
 
-          <p className="mt-1 text-xs opacity-70">
+          <p className="mt-1 text-xs text-slate-500">
             Showing {ageRange[0]}–{ageRange[1]} months
           </p>
         </div>
 
-        {/* ✅ SORT SELECT (new anatomy) */}
-        <div className="lg:col-span-4">
+        <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-sm">
           <Select placeholder="Choose Sort Order">
             <Label>Sort</Label>
 
@@ -130,7 +150,7 @@ export function AnimalFilters() {
           </Select>
         </div>
 
-        <div className="lg:col-span-6">
+        <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-sm">
           <Select placeholder="Pick One or More">
             <Label>Highlights</Label>
 
@@ -171,7 +191,7 @@ export function AnimalFilters() {
                   <span className="mr-1">{k}</span>
                   <Button
                     size="sm"
-                    variant="ghost"
+                    variant="secondary"
                     onPress={() => {
                       setHighlightKeys((prev) => {
                         const next = new Set(prev);
@@ -188,7 +208,7 @@ export function AnimalFilters() {
           )}
         </div>
 
-        <div className="lg:col-span-6">
+        <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-sm">
           <Select placeholder="Pick One or More">
             <Label>Considerations</Label>
 
@@ -227,7 +247,7 @@ export function AnimalFilters() {
                   <span className="mr-1">{k}</span>
                   <Button
                     size="sm"
-                    variant="ghost"
+                    variant="secondary"
                     onPress={() => {
                       setConsiderationKeys((prev) => {
                         const next = new Set(prev);
@@ -243,19 +263,16 @@ export function AnimalFilters() {
             </div>
           )}
         </div>
+      </div>
 
-        <div className="lg:col-span-12 flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm opacity-80">
-            Showing <span className="font-medium">{filteredAnimals.length}</span> result
-            {filteredAnimals.length === 1 ? "" : "s"}.
-          </p>
-
-          <div className="flex gap-2">
-            <Button variant="tertiary" onPress={clearFilters}>
-              Clear filters
-            </Button>
-          </div>
-        </div>
+      <div className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-100 via-white to-slate-50 p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+          Results
+        </p>
+        <p className="text-sm text-slate-700">
+          Showing <span className="font-semibold">{filteredAnimals.length}</span> of{" "}
+          {counts.total} floofs.
+        </p>
       </div>
     </div>
   )

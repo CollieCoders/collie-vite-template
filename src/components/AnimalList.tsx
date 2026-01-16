@@ -35,7 +35,7 @@ export function AnimalList() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredAnimals.map((a: Animal) => {
             const inCrate = crateIds.has(a.id);
             const isBioExpanded = expandedBioIds.has(a.id);
@@ -111,7 +111,7 @@ export function AnimalList() {
                         className="mt-1 px-0"
                         onPress={() => toggleBio(a.id)}
                       >
-                        {isBioExpanded ? "Show less" : "Read more"}
+                        {isBioExpanded ? "Show less" : "View Bio"}
                       </Button>
                     )}
                   </div>
@@ -121,7 +121,7 @@ export function AnimalList() {
                       <p className="text-xs font-medium opacity-70">Highlights</p>
                       <div className="mt-1 flex flex-wrap gap-2">
                         {a.highlights.slice(0, 4).map((h) => (
-                          <Chip key={`${a.id}-h-${h}`} size="sm" variant="tertiary">
+                          <Chip key={`${a.id}-h-${h}`} size="sm" variant="primary" color="success">
                             {h}
                           </Chip>
                         ))}
@@ -140,7 +140,7 @@ export function AnimalList() {
                           <Chip
                             key={`${a.id}-c-${c}`}
                             size="sm"
-                            variant="soft"
+                            variant="primary"
                             color="warning"
                           >
                             {c}
@@ -165,7 +165,7 @@ export function AnimalList() {
                   </Button>
 
                   {/* <Button
-                    variant="ghost"
+                    variant="secondary"
                     onPress={() => {
                       quickAdopt(a.id);
                     }}
